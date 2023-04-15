@@ -4,15 +4,13 @@ const typeDefs = gql`
 
     type User {
         name: String!
-        userName: String!
         age: Int!
         nationality: String!
     }
 
     type Query {
-        getUsers: [User!]!
+        users: [User!]!
     }
-
-
-
 `
+
+module.exports = { typeDefs }
