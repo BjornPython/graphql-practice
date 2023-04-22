@@ -1,4 +1,4 @@
-const {users} = require("../testData")
+const { users } = require("../testData")
 const _ = require("lodash")
 const resolvers = {
     Query: {
@@ -6,11 +6,16 @@ const resolvers = {
             return users
         },
         user: (parent, args) => {
-            const {id} = args
-            const data = _.find(users,{id: Number(id)})
+            const { id } = args
+            const data = _.find(users, { id: Number(id) })
             return data
-        }   
+        }
+    },
+    User: {
+        friends: () => {
+            return "lel"
+        }
     }
-}   
+}
 
-module.exports = {resolvers}
+module.exports = { resolvers }
