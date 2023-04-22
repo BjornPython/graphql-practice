@@ -16,9 +16,20 @@ const typeDefs = gql`
         friends: String
     }
 
+    input CreateUserInput {
+        name: String = "Anonymous"
+        age: Int = 0
+        nationality: String = "Filipino"
+        friends: String = "yes"
+    }
+
     type Query {
         users: [User!]!
         user(id: ID!): User!
+    }
+
+    type Mutation {
+        createUser(input: CreateUserInput!): User
     }
 `
 
